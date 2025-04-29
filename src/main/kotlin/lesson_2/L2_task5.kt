@@ -11,7 +11,8 @@ fun main() {
     val annualAccruals = 1
     val depositPeriod = 20
 
-    val futureDeposit = enteredSum * (1 + interestRate * INTO_PROPORTION / annualAccruals).pow(annualAccruals * depositPeriod)
+    val futureDeposit =
+        enteredSum * (1 + interestRate * INTO_PROPORTION / annualAccruals).pow(annualAccruals * depositPeriod)
 
     println("Размер вклада через 20 лет составит: ${"%.3f".format(futureDeposit)}")
 
