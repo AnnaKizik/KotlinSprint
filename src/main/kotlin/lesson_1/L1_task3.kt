@@ -6,15 +6,12 @@ fun main() {
     var hour = "09"
     var minute = "07"
 
-    println("год полета Юрия Гагарина в космос: $year")
-    println("час взлета: $hour")
-    println("минута взлета: $minute")
-    println("Время взлета: $hour:$minute")
+    println(year)
+    println(hour)
+    println(minute)
 
     hour = "10"
     minute = "55"
-    println("час посадки: $hour")
-    println("минута посадки: $minute")
     println("Время посадки: $hour:$minute")
 
 }
