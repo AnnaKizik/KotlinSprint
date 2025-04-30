@@ -3,8 +3,8 @@ package org.example.lesson_3
 fun main() {
 
     var surname = "Андреева"
-    var name = "Татьяна"
-    var patronymic = "Сергеевна"
+    val name = "Татьяна"
+    val patronymic = "Сергеевна"
     var age = 20
 
     println("$surname $name $patronymic, $age лет")
