@@ -6,12 +6,12 @@ fun main() {
     var toWhere = "E4"
     var strokeNumber = 1
 
-    println("Ход №$strokeNumber: $fromWhere -> $toWhere")
+    println("$fromWhere-$toWhere; $strokeNumber")
 
     fromWhere = "D2"
     toWhere = "D3"
     strokeNumber = 2
 
-    println("Ход №$strokeNumber: $fromWhere -> $toWhere")
+    println("$fromWhere-$toWhere; $strokeNumber")
 
 }
