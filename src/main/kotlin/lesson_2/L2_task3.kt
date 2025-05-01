@@ -11,6 +11,6 @@ fun main() {
     val arrivalTimeHour: Int = departureTimeHour + (departureTimeMinute + travelTime) / TIME_UNIT
     val arrivalTimeMinute: Int = (departureTimeMinute + travelTime) % TIME_UNIT
 
-    println("Время прибытия поезда: $arrivalTimeHour:$arrivalTimeMinute")
+    println("Время прибытия поезда: ${"%02d:%02d".format(arrivalTimeHour, arrivalTimeMinute)}")
 
 }
