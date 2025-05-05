@@ -2,8 +2,8 @@ package org.example.lesson_5
 
 fun main() {
 
-    val winNumber1 = 11
-    val winNumber2 = 25
+    val winNumber1 = (0..42).random()
+    val winNumber2 = (0..42).random()
 
     print("Введите любое целое число от 0 до 42: ")
     val userNumber2 = readln().toInt()
