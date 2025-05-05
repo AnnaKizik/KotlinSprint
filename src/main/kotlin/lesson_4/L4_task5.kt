@@ -1,5 +1,11 @@
 package org.example.lesson_4
 
+const val DAMAGE = false
+const val MIN_CREW_NUMBER = 55
+const val MAX_CREW_NUMBER = 70
+const val MIN_PROVISION_AMOUNT = 50
+const val GOOD_METEOCONDITIONS = true
+
 
 fun main() {
 
@@ -15,6 +21,6 @@ fun main() {
     print("Метеоусловия благоприятны (true/false): ")
     val goodMeteoconditions = readln().toBoolean()
 
-    print("Можно отправляться в плавание: ${(!damage && crewNumber in 55..70 && provisionBoxAmount > 50) || (crewNumber == 70 && provisionBoxAmount >= 50 && goodMeteoconditions)}")
+    print("Можно отправляться в плавание: ${(damage != DAMAGE && crewNumber in MIN_CREW_NUMBER..MAX_CREW_NUMBER && provisionBoxAmount > MIN_PROVISION_AMOUNT) || (crewNumber == MAX_CREW_NUMBER && provisionBoxAmount >= MIN_PROVISION_AMOUNT && goodMeteoconditions == GOOD_METEOCONDITIONS)}")
 
 }
