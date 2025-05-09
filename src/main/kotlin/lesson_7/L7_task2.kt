@@ -7,7 +7,6 @@ fun main() {
         println("Ваш код авторизации: $smsCode")
         print("Введите код из СМС: ")
         val userCode = readln().toInt()
-
     } while (userCode != smsCode)
 
     println("Добро пожаловать!")
