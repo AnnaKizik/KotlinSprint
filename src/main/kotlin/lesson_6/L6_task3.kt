@@ -1,7 +1,5 @@
 package org.example.lesson_6
 
-import kotlin.io.println
-
 fun main() {
 
     print("На сколько секунд поставить таймер? – ")
