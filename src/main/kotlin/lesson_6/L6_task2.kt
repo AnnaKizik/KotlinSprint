@@ -1,18 +1,14 @@
 package org.example.lesson_6
 
+const val TO_MILISECONDS = 1000
+
 fun main() {
 
     print("На сколько секунд поставить таймер? – ")
-    var numberOfSeconds = readln().toInt()
+    val numberOfSeconds = readln().toInt()
+    val miliseconds = (numberOfSeconds * TO_MILISECONDS).toLong()
 
-    var cycleCounter = 0
-
-    while (numberOfSeconds > 0) {
-        numberOfSeconds--
-        cycleCounter++
-        Thread.sleep(1000)
-    }
-
-    println("Прошло $cycleCounter секунд")
+    Thread.sleep(miliseconds)
+    println("Прошло $numberOfSeconds секунд")
 
 }
