@@ -2,16 +2,15 @@ package org.example.lesson_9
 
 fun main() {
 
-    var userIngredient: String
+    var numberOfIngredients = 5
     val listOfIngredients = mutableSetOf<String>()
 
-    while (listOfIngredients.size != 5) {
+    while (numberOfIngredients != 0) {
         print("Введите ингредиент: ")
-        userIngredient = readln()
-        listOfIngredients.add(userIngredient)
+        listOfIngredients.add(readln())
+        numberOfIngredients--
     }
 
-    listOfIngredients.sorted()
-    println(listOfIngredients.joinToString(", ").replaceFirstChar { it.uppercase() })
+    println(listOfIngredients.sorted().joinToString(", ").replaceFirstChar { it.uppercase() })
 
 }
