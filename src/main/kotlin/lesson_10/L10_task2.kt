@@ -1,5 +1,7 @@
 package org.example.lesson_10
 
+const val MIN_lOGIN_AND_PASSWORD_LENGTH = 4
+
 fun main() {
 
     print("Придумайте логин: ")
@@ -12,6 +14,6 @@ fun main() {
 }
 
 fun lengthCheck(login: String, password: String) {
-    if (login.length < 4 || password.length < 4)
+    if (login.length < MIN_lOGIN_AND_PASSWORD_LENGTH || password.length < MIN_lOGIN_AND_PASSWORD_LENGTH)
         println("Логин или пароль недостаточно длинные")
 }
