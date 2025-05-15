@@ -3,7 +3,7 @@ package org.example.lesson_9
 fun main() {
 
     println("Введите 5 ингредиентов через запятую с пробелом: ")
-    val listOfIngredients = readln().split(", ").toList()
+    val listOfIngredients = readln().split(", ")
 
     val listInAlphabeticalOrder = listOfIngredients.sorted()
 
