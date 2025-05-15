@@ -7,7 +7,7 @@ fun main() {
     val userIngredient = readln()
 
     for (i in ingredientsList) {
-        if (userIngredient in ingredientsList) {
+        if (i == userIngredient) {
             println("Ингредиент $i в рецепте есть")
             return
         }
