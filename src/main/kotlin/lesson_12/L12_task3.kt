@@ -2,9 +2,9 @@ package org.example.lesson_12
 
 const val KELVIN_TO_CELSIUS = 273.15
 
-class Weather1(dayTemKalvin: Int, nightTemKalvin: Int, _downfall: Boolean) {
-    var dayTemperature = dayTemKalvin
-    var nightTemperature = nightTemKalvin
+class Weather1(dayTemKelvin: Int, nightTemKelvin: Int, _downfall: Boolean) {
+    var dayTemperature = dayTemKelvin
+    var nightTemperature = nightTemKelvin
     val downfall = _downfall
 
     init {
