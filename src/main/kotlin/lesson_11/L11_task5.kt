@@ -1,11 +1,10 @@
 package org.example.lesson_11
 
-private val forumMembers = mutableListOf<ForumMember>()
-private val forumMessages = mutableListOf<ForumMessage>()
-private var lastId = 0
-
-class Forum() {
-
+class Forum(
+    val forumMembers: MutableList<ForumMember> = mutableListOf(),
+    val forumMessages: MutableList<ForumMessage> = mutableListOf(),
+    var lastId: Int = 0,
+) {
     fun createNewUser(userName: String): ForumMember {
         lastId++
         val user = ForumMember(lastId, userName)
@@ -35,13 +34,13 @@ class Forum() {
 }
 
 class ForumMember(
-    var userId: Int,
-    var userName: String,
+    val userId: Int,
+    val userName: String,
 )
 
 class ForumMessage(
-    var authorId: Int,
-    var message: String,
+    val authorId: Int,
+    val message: String,
 )
 
 fun main() {
