@@ -3,43 +3,36 @@ package org.example.lesson_11
 class Room(
     val cover: String,
     val name: String,
-    val members: MutableList<User> = mutableListOf(),
+    val members: MutableList<User>,
 ) {
 
     fun addMember(newMember: User) {
         members.add(newMember)
     }
 
-    fun updateUserInformation(userName: User, userStatus: User) {
-        print("Имя пользователя: ")
-        userName.nikname = readln()
-        print("Укажите статус: ")
-        userName.status = readln()
+    fun updateUserInformation(userName: String, newStatus: String) {
+        members.find { it.nikname == userName }?.status = newStatus
     }
-
 }
 
 class User(
     val foto: String,
     var nikname: String,
-    var status: String? = null,
+    var status: String,
 )
 
-val room1 = Room(
-    "Изображение",
-    "Рабочий чат",
-    mutableListOf(
-        User(
-            "Фото 1",
-            "Денис",
-        ),
-        User(
-            "Фото 2",
-            "Антон",
-        ),
-        User(
-            "Фото 3",
-            "Лена",
-        ),
-    ),
-)
+fun main() {
+
+    val room1 = Room(
+        "Изображение",
+        "Рабочий чат",
+        mutableListOf(),
+    )
+
+    room1.addMember(User("Фото1", "Антон", "микрофон выключен"))
+    room1.addMember(User("Фото2", "Юля", "микрофон выключен"))
+    println(room1.members.joinToString { "${it.nikname} (${it.status})" })
+
+    room1.updateUserInformation("Юля", "разговаривает")
+    println(room1.members.joinToString { "${it.nikname} (${it.status})" })
+}
