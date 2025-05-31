@@ -1,64 +1,65 @@
 package org.example.lesson_13
 
 open class Liner1(
+    val name: String,
     val numberOfPassengers: Int = 5000,
     val speed: Double = 50.3,
+    val loadCapacity: Int = 5000
 ) {
-    open fun loadMethod(){
+    open fun load() {
         println("Выдвигается горизонтальный трап со шкафута")
     }
 
-    open fun shipInfo(){
-       println("""
+    open fun displayInfo() {
+        println(
+            """
            Информация о корабле
            Количество пассажиров: $numberOfPassengers
            Скорость: $speed
-       """.trimIndent())
+       """.trimIndent()
+        )
     }
-
 }
 
-class Cargo1(
-    val loadCapacity: Int
-): Liner1(numberOfPassengers = 10, speed = 22.6){
+class Cargo1(name: String) : Liner1(name = name, numberOfPassengers = 10, speed = 22.6, loadCapacity = 10000) {
 
-    override fun loadMethod() {
+    override fun load() {
         println("\nПогрузочный кран активирован")
     }
 
-    override fun shipInfo() {
-        super.shipInfo()
+    override fun displayInfo() {
+        super.displayInfo()
         println("Грузоподъемность: $loadCapacity\n")
     }
-
 }
 
 class Icebreaker1(
+    name: String,
     val breakIce: Boolean
-): Liner1(numberOfPassengers = 60, speed = 20.2){
-    override fun loadMethod() {
+) : Liner1(name = name, numberOfPassengers = 60, speed = 20.2, loadCapacity = 500) {
+    override fun load() {
         println("Открываются ворота со стороны кормы")
     }
 
-    override fun shipInfo() {
-        super.shipInfo()
+    override fun displayInfo() {
+        super.displayInfo()
         println("Может идти по льду: $breakIce")
     }
 }
 
-fun main(){
+fun main() {
 
-    val liner = Liner1()
-    liner.loadMethod()
-    liner.shipInfo()
+    val liner = Liner1("Evergreen")
+    liner.load()
+    liner.displayInfo()
 
-    val cargo = Cargo1(8000)
-    cargo.loadMethod()
-    cargo.shipInfo()
+    val cargo = Cargo1("Lucky")
+    cargo.load()
+    cargo.displayInfo()
 
-    val icebreaker = Icebreaker1(true)
-    icebreaker.loadMethod()
-    icebreaker.shipInfo()
+    val icebreaker = Icebreaker1("Believer", true)
+    icebreaker.load()
+    icebreaker.displayInfo()
 
 }
 
