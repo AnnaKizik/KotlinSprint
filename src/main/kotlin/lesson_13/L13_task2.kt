@@ -10,6 +10,6 @@ class TelDirectory(
 }
 
 fun main() {
-    val contact1 = TelDirectory("Андрей", 89657809954, null)
+    val contact1 = TelDirectory("Андрей", 89657809954)
     contact1.printContactInformation()
 }
