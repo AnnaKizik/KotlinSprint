@@ -6,14 +6,13 @@ class ContactData(
     val company: String?
 )
 
-fun main(){
+fun main() {
 
     print("Введите номер контакта: ")
-    val contactNumber = readln()
-    try {
-        contactNumber.toLong()
-    } catch (e: Exception){
-        println("Возникла ошибка: ${e.javaClass.simpleName}")
+    val contactNumber = try {
+        readln().toLong()
+    } catch (e: NumberFormatException) {
+        println("Возникла ошибка: ${e::class.simpleName}")
     }
 
 }
