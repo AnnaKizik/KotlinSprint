@@ -3,9 +3,9 @@ package org.example.lesson_13
 class ContactInfo(
     val name: String,
     val number: Long,
-    val company: String? = null
+    val company: String?
 ) {
-    fun contactInformation() =
+    fun printContactInformation() =
         println("- Имя: $name\n- Номер: $number\n- Компания: ${company ?: "не указано"}\n")
 }
 
@@ -29,14 +29,17 @@ fun main() {
         }
 
         print("Введите название компании: ")
-        contactCompany = readln()
+        if (readln().isEmpty())
+            contactCompany = null
+        else
+            contactCompany = readln()
 
         contactsList.add(ContactInfo(contactName, contactNumber, contactCompany))
 
         print("Добавить еще контакт (да/нет)? – ")
         newEntry = readln()
-    } while (newEntry == "да")
+    } while (newEntry.contains("да", ignoreCase = true))
 
-    contactsList.forEach { it.contactInformation() }
+    contactsList.forEach { it.printContactInformation() }
 
 }
