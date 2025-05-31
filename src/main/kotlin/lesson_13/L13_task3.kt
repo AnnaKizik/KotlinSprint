@@ -18,7 +18,6 @@ fun main() {
 
     val companies = contacts
         .mapNotNull { it.company }
-        .filter { it != "null" }
         .distinct()
 
     println(companies)
