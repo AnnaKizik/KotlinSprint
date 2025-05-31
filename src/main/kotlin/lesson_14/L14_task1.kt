@@ -1,25 +1,28 @@
 package org.example.lesson_13
 
 open class Liner(
+    val name: String,
     val numberOfPassengers: Int = 5000,
     val speed: Double = 50.3,
+    val loadCapacity: Int = 5000
 )
 
 class Cargo(
-    val loadCapacity: Int
-): Liner(numberOfPassengers = 10, speed = 22.6)
+    name: String,
+) : Liner(name = name, numberOfPassengers = 10, speed = 22.6, loadCapacity = 8000)
 
 class Icebreaker(
+    name: String,
     val breakIce: Boolean
-): Liner(numberOfPassengers = 60, speed = 20.2)
+) : Liner(name = name, numberOfPassengers = 60, speed = 20.2, loadCapacity = 500)
 
-fun main(){
+fun main() {
 
-    val liner = Liner()
+    val liner = Liner("Evergreen")
 
-    val cargo = Cargo(8000)
+    val cargo = Cargo("Lucky")
 
-    val icebreaker = Icebreaker(true)
+    val icebreaker = Icebreaker("Believer", true)
 
 }
 
