@@ -3,7 +3,7 @@ package org.example.lesson_13
 class ContactInfo(
     val name: String,
     val number: Long,
-    val company: String?
+    val company: String? = null
 ) {
     fun printContactInformation() =
         println("- Имя: $name\n- Номер: $number\n- Компания: ${company ?: "не указано"}\n")
