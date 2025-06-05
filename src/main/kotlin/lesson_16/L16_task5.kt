@@ -3,18 +3,18 @@ package org.example.lesson_16
 class Gamer(
     val name: String,
     private var health: Int,
-    var impactForce: Int
+    private var impactForce: Int
 ) {
     fun takeDamage(damage: Int) {
         println("Получено $damage ед. урона")
-        health = health - damage
+        health -= damage
         if (health <= 0) becomeDead()
     }
 
-    fun takeHeal(heal: Int) {
+    fun Heal(heal: Int) {
         if (health > 0) {
             println("Восстановлено $heal ед. здоровья")
-            health = health + heal
+            health += heal
         } else println("Лечение невозможно: персонаж мертв!")
     }
 
@@ -30,8 +30,8 @@ fun main() {
 
     gamer.takeDamage(3)
     gamer.takeDamage(1)
-    gamer.takeHeal(2)
-    gamer.takeHeal(1)
+    gamer.Heal(2)
+    gamer.Heal(1)
     gamer.takeDamage(5)
-    gamer.takeHeal(5)
+    gamer.Heal(5)
 }
