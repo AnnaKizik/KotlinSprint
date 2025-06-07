@@ -1,15 +1,15 @@
 package org.example.lesson_16
 
 class UserInfo(
-    private val login: String = "Jack",
-    private val password: String = "1234"
+    private val login: String,
+    private val password: String
 ) {
-    fun checkPassword() = println(password == readln())
+    fun checkPassword(inputPassword: String) = password == inputPassword
 }
 
 fun main() {
-    val user = UserInfo()
+    val user = UserInfo("Jack", "1234")
 
     print("Введите пароль: ")
-    user.checkPassword()
+    println(user.checkPassword(readln()))
 }
