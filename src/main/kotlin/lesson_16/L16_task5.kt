@@ -5,7 +5,11 @@ class Gamer(
     private var maxHealth: Int,
     private var impactForce: Int
 ) {
-    var health = maxHealth
+    private var health = maxHealth
+
+    fun showHealthLevel() {
+        println("Текущий уровень здоровья: $health ед.")
+    }
 
     fun takeDamage(damage: Int) {
         println("Получено $damage ед. урона")
@@ -31,10 +35,10 @@ class Gamer(
 fun main() {
     val gamer = Gamer("Warrior", 5, 10)
 
-    println("Текущий уровень здоровья: ${gamer.health} ед.")
+    gamer.showHealthLevel()
     gamer.takeDamage(1)
     gamer.heal(3)
-    println("Текущий уровень здоровья: ${gamer.health} ед.")
+    gamer.showHealthLevel()
     gamer.takeDamage(3)
     gamer.takeDamage(1)
     gamer.heal(2)
