@@ -13,7 +13,7 @@ class InfoUser(
         }
 
     var password: String
-        set(_) {
+        set(value) {
             println("Вы не можете изменить пароль")
         }
         get() = hidePassword.repeat(userPassword.length)
