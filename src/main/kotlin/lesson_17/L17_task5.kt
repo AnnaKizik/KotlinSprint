@@ -4,7 +4,6 @@ class InfoUser(
     private var userLogin: String,
     private val userPassword: String
 ) {
-    private val hidePassword = "*"
 
     var login: String = userLogin
         set(value) {
@@ -16,7 +15,7 @@ class InfoUser(
         set(value) {
             println("Вы не можете изменить пароль")
         }
-        get() = hidePassword.repeat(userPassword.length)
+        get() = "*".repeat(userPassword.length)
 }
 
 fun main() {
