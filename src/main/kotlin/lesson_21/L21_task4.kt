@@ -3,10 +3,9 @@ package org.example.lesson_21
 import java.io.File
 
 fun File.saveWordToFile(word: String): File {
-    val newFile = File("word.txt")
-    if (newFile.exists()) newFile.readText()
-    newFile.writeText(word.lowercase())
-    return newFile
+    if (this.exists()) this.readText()
+    this.writeText(word.lowercase())
+    return this
 }
 
 fun main() {
